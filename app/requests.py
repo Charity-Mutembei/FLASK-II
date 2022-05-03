@@ -43,9 +43,10 @@ def process_sources (sources_list):
         name = sources_items.get('name')
         category = sources_items.get('category')
         description = sources_items.get('description')
+        url = sources_items.get('url')
 
         if id: 
-            sources_objects = Sources(id, name, category, description)
+            sources_objects = Sources(id, name, category, description, url)
 
             sources_results.append(sources_objects)
     

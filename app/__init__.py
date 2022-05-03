@@ -6,7 +6,7 @@ from config import config_options
 
 def create_app(config_name):
 
-    app = Flask(__name__)
+    app = Flask(__name__, static_url_path='/app/static/')
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
