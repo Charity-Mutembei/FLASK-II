@@ -2,7 +2,7 @@
 from flask import render_template,request,redirect,url_for
 from . import main
 from ..requests import get_sources
-# from ..requests import get_articles
+from ..requests import get_articles
 # from .forms import ReviewForm
 # from ..models import Sources
 
@@ -14,8 +14,9 @@ def index():
     '''
 
     sources = get_sources()
+    articles = get_articles()
     # articles = get_articles()
 
     title = 'News Today' 
 
-    return render_template('index.html', title = title, sources = sources)
+    return render_template('index.html', title = title, sources = sources,articles = articles)
