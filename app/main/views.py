@@ -20,3 +20,13 @@ def index():
     title = 'News Today' 
 
     return render_template('index.html', title = title, sources = sources,articles = articles)
+
+@main.route('/articles')
+def articles ():
+    '''
+    Function that returns the article page and its data
+    '''
+    articles = get_articles()
+    title = 'Articles Today' 
+
+    return render_template('articles.html', title = title, articles = articles)
