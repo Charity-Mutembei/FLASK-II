@@ -13,13 +13,21 @@ def index():
     Rootpage function that returns the index page and its data
     '''
 
-    sources = get_sources()
-    articles = get_articles()
+    # sources = get_sources()
+    # articles = get_articles()
     # articles = get_articles()
 
     title = 'News Today' 
 
-    return render_template('index.html', title = title, sources = sources,articles = articles)
+    return render_template('base.html', title = title, )
+
+@main.route('/home')
+def home ():
+    '''
+    Function that returns the home page
+    '''
+    return render_template('home.html')
+
 
 @main.route('/articles')
 def articles ():
@@ -30,3 +38,12 @@ def articles ():
     title = 'Articles Today' 
 
     return render_template('articles.html', title = title, articles = articles)
+
+@main.route('/sources')
+def sources ():
+    '''
+    Function that returns the article sources and its data
+    '''
+
+    sources = get_sources ()
+    return render_template ('index.html', sources = sources)
